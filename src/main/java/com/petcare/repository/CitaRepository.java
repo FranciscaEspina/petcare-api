@@ -1,0 +1,13 @@
+package com.petcare.repository;
+
+import com.petcare.entity.Cita;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface CitaRepository extends JpaRepository<Cita, Long> {
+
+    List<Cita> findByMascotaIdOrderByFechaDesc(Long mascotaId);
+
+    boolean existsByMascotaId(Long mascotaId);
+}
