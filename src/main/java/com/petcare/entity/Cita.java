@@ -25,7 +25,6 @@ public class Cita {
     @Column(precision = 12, scale = 2)
     private BigDecimal costo;
 
-    // Muchas citas pertenecen a una mascota (columna mascota_id en la tabla citas).
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "mascota_id", nullable = false)
     private Mascota mascota;

@@ -33,7 +33,6 @@ public class CitaService {
         return CitaResponse.from(buscar(id));
     }
 
-    /** GET /api/mascotas/{id}/citas */
     @Transactional(readOnly = true)
     public List<CitaResponse> listarPorMascota(Long mascotaId) {
         if (!mascotaRepository.existsById(mascotaId)) {
@@ -63,7 +62,6 @@ public class CitaService {
         citaRepository.delete(buscar(id));
     }
 
-    // ----- helpers -----
 
     private Cita buscar(Long id) {
         return citaRepository.findById(id)
@@ -71,7 +69,6 @@ public class CitaService {
     }
 
     private void aplicar(Cita cita, CitaRequest request) {
-        // Validación pedida en la actividad: no crear una cita para una mascota inexistente.
         Mascota mascota = mascotaRepository.findById(request.mascotaId())
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "No se puede registrar la cita: no existe una mascota con id " + request.mascotaId()));

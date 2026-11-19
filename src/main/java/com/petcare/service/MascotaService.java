@@ -39,7 +39,6 @@ public class MascotaService {
         return MascotaResponse.from(buscar(id));
     }
 
-    /** GET /api/duenos/{id}/mascotas */
     @Transactional(readOnly = true)
     public List<MascotaResponse> listarPorDueno(Long duenoId) {
         if (!duenoRepository.existsById(duenoId)) {
@@ -72,7 +71,6 @@ public class MascotaService {
         mascotaRepository.delete(mascota);
     }
 
-    // ----- helpers -----
 
     private Mascota buscar(Long id) {
         return mascotaRepository.findById(id)
@@ -80,7 +78,6 @@ public class MascotaService {
     }
 
     private void aplicar(Mascota mascota, MascotaRequest request) {
-        // Validación de negocio: el dueño debe existir antes de asociarle una mascota.
         Dueno dueno = duenoRepository.findById(request.duenoId())
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "No se puede registrar la mascota: no existe un dueño con id " + request.duenoId()));

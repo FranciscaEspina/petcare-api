@@ -50,7 +50,6 @@ public class MascotaController {
         return ResponseEntity.noContent().build();
     }
 
-    /** Endpoint de relación: citas de una mascota. */
     @GetMapping("/{id}/citas")
     public List<CitaResponse> citasDeLaMascota(@PathVariable Long id) {
         return citaService.listarPorMascota(id);

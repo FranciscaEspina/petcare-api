@@ -25,7 +25,6 @@ public class Dueno {
     @Column(length = 120)
     private String email;
 
-    // Un dueño tiene muchas mascotas. "mappedBy" indica que la FK vive en Mascota.
     @OneToMany(mappedBy = "dueno")
     private List<Mascota> mascotas = new ArrayList<>();
 

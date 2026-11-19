@@ -50,7 +50,6 @@ public class DuenoController {
         return ResponseEntity.noContent().build();
     }
 
-    /** Endpoint de relación: mascotas de un dueño. */
     @GetMapping("/{id}/mascotas")
     public List<MascotaResponse> mascotasDelDueno(@PathVariable Long id) {
         return mascotaService.listarPorDueno(id);

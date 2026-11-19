@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/** Permite que un front en React (Vite: 5173, CRA: 3000) consuma la API. No afecta a Postman. */
 @Configuration
 public class CorsConfig {
 

@@ -12,7 +12,6 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import java.time.LocalDateTime;
 import java.util.List;
 
-/** Convierte las excepciones en respuestas JSON ordenadas con el código HTTP correcto. */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

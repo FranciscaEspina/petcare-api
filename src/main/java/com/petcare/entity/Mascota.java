@@ -25,12 +25,10 @@ public class Mascota {
 
     private LocalDate fechaNacimiento;
 
-    // Muchas mascotas pertenecen a un dueño (columna dueno_id en la tabla mascotas).
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "dueno_id", nullable = false)
     private Dueno dueno;
 
-    // Una mascota tiene muchas citas.
     @OneToMany(mappedBy = "mascota")
     private List<Cita> citas = new ArrayList<>();
 

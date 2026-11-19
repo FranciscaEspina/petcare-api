@@ -67,7 +67,6 @@ public class DuenoService {
         duenoRepository.delete(dueno);
     }
 
-    // ----- helpers -----
 
     private Dueno buscar(Long id) {
         return duenoRepository.findById(id)
